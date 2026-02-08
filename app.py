@@ -34,3 +34,39 @@ if selected_class:
         if topic_input:
             st.info(f"🔹 You entered topic: {topic_input}")
             st.write("Ab aapka AI revision aur MCQ module yaha se connect hoga 🔜")
+# Step 4: MCQ & AI Explanation Skeleton
+if topic_input:
+
+    st.write("📌 AI Revision & MCQs Module")
+
+    # Example: MCQs list
+    mcqs = [
+        {
+            "question": f"What is the main concept of {topic_input}?",
+            "options": ["Option A", "Option B", "Option C", "Option D"],
+            "answer": "Option A"
+        },
+        {
+            "question": f"Important formula in {topic_input}?",
+            "options": ["Formula X", "Formula Y", "Formula Z", "Formula W"],
+            "answer": "Formula Y"
+        }
+    ]
+
+    st.subheader("🧪 Practice MCQs")
+    score = 0
+    for i, mcq in enumerate(mcqs):
+        st.write(f"Q{i+1}: {mcq['question']}")
+        user_answer = st.radio("Select answer:", mcq["options"], key=f"mcq{i}")
+        if user_answer:
+            if user_answer == mcq["answer"]:
+                st.success("✅ Correct")
+                score += 1
+            else:
+                st.error(f"❌ Wrong. Correct answer: {mcq['answer']}")
+
+    st.info(f"Your Score: {score}/{len(mcqs)}")
+
+    # Placeholder for AI Explanation
+    st.subheader("🤖 AI Explanation")
+    st.write(f"AI explanation for **{topic_input}** will appear here in future updates.")
