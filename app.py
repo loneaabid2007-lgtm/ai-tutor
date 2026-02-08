@@ -126,3 +126,41 @@ if topic_input and selected_subject:
         explanation = f"Here is a simple English explanation for **{topic_input}**:\n- Key points\n- Important formulas\n- Example questions"
 
     st.write(explanation)
+neet_topics = {
+    "Class 11": {
+        "Physics": ["Mechanics", "Thermodynamics", "Electrostatics", "Optics", "Gravitation"],
+        "Chemistry": ["Atomic Structure", "Chemical Bonding", "Thermodynamics", "Solutions", "Equilibrium"],
+        "Biology": ["Cell Biology", "Genetics", "Human Physiology", "Plant Physiology", "Evolution"]
+    },
+    "Class 12": {
+        "Physics": ["Electromagnetism", "Modern Physics", "Optics", "Current Electricity", "Semiconductors"],
+        "Chemistry": ["Solid State", "Electrochemistry", "Organic Chemistry", "Coordination Compounds", "Biomolecules"],
+        "Biology": ["Reproduction", "Genetics & Evolution", "Human Health", "Biotechnology", "Ecology"]
+    }# Sample MCQs for any topic
+mcq_bank = {
+    "Mechanics": [
+        {
+            "question": "Newton's First Law is also called?",
+            "options": ["Law of Inertia", "Law of Motion", "Law of Gravity", "Law of Work"],
+            "answer": "Law of Inertia"
+        },
+        {
+            "question": "Unit of Force?",
+            "options": ["Newton", "Joule", "Pascal", "Watt"],
+            "answer": "Newton"
+        }
+    ],
+    "Cell Biology": [
+        {
+            "question": "The basic unit of life is?",
+            "options": ["Cell", "Atom", "Molecule", "Organ"],
+            "answer": "Cell"
+        },
+        {
+            "question": "Site of energy production in cell?",
+            "options": ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"],
+            "answer": "Mitochondria"
+        }
+    ]
+}
+}
