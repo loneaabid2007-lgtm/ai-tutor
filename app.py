@@ -84,3 +84,45 @@ if topic_input:
         explanation = f"Here is a simple English explanation for **{topic_input}**:\n- Key points\n- Important formulas\n- Example questions"
 
     st.write(explanation)
+# Step 6: Final Interactive MCQ + AI Explanation
+if topic_input and selected_subject:
+
+    st.subheader("🧪 Practice MCQs")
+    
+    # Example MCQs list
+    mcqs = [
+        {
+            "question": f"What is the main concept of {topic_input}?",
+            "options": ["Option A", "Option B", "Option C", "Option D"],
+            "answer": "Option A"
+        },
+        {
+            "question": f"Important formula in {topic_input}?",
+            "options": ["Formula X", "Formula Y", "Formula Z", "Formula W"],
+            "answer": "Formula Y"
+        }
+    ]
+    
+    score = 0
+    for i, mcq in enumerate(mcqs):
+        st.write(f"Q{i+1}: {mcq['question']}")
+        user_answer = st.radio("Select answer:", mcq["options"], key=f"mcq{i}")
+        if user_answer:
+            if user_answer == mcq["answer"]:
+                st.success("✅ Correct")
+                score += 1
+            else:
+                st.error(f"❌ Wrong. Correct answer: {mcq['answer']}")
+    
+    st.info(f"Your Score: {score}/{len(mcqs)}")
+
+    # AI Explanation + Language Toggle
+    st.subheader("🌐 AI Explanation")
+    language = st.radio("Choose Language:", ["Hindi", "English"], horizontal=True)
+
+    if language == "Hindi":
+        explanation = f"यहाँ **{topic_input}** का सरल हिंदी में विवरण दिखेगा।\n- Key points\n- Important formulas\n- Example questions"
+    else:
+        explanation = f"Here is a simple English explanation for **{topic_input}**:\n- Key points\n- Important formulas\n- Example questions"
+
+    st.write(explanation)
