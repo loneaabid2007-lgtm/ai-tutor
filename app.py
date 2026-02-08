@@ -5,15 +5,16 @@ st.set_page_config(page_title="AI Tutor", page_icon="📘")
 st.title("📘 AI Tutor")
 st.subheader("NEET Smart Revision App")
 
-st.write("""
-Welcome to **AI Tutor** 👋  
+st.write("Welcome 👋")
+st.write("Pehle apni class select karo:")
 
-Yeh app aapko:
-- Class 8–12 ke topics revise karne me madad karega  
-- MCQ practice dega  
-- AI ke through smart explanation dega  
+# Class selection
+selected_class = st.selectbox(
+    "Select your class",
+    ["Class 8", "Class 9", "Class 10", "Class 11", "Class 12"]
+)
 
-🚀 Jaldi hi aur features add honge!
-""")
+if selected_class:
+    st.success(f"✅ You selected {selected_class}")
 
-st.info("📌 Abhi basic version hai. MCQs aur AI features next step me add karenge.")
+st.info("Next step: Subject & MCQs add karenge 🚀")
