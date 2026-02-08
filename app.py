@@ -70,3 +70,17 @@ if topic_input:
     # Placeholder for AI Explanation
     st.subheader("🤖 AI Explanation")
     st.write(f"AI explanation for **{topic_input}** will appear here in future updates.")
+# Step 5: AI Explanation + Language Toggle
+if topic_input:
+
+    st.subheader("🌐 Language Selection for Explanation")
+    language = st.radio("Choose Language:", ["Hindi", "English"], horizontal=True)
+
+    st.subheader("🤖 AI Explanation")
+    
+    if language == "Hindi":
+        explanation = f"यहाँ **{topic_input}** का सरल हिंदी में विवरण दिखेगा।\n- Key points\n- Important formulas\n- Example questions"
+    else:
+        explanation = f"Here is a simple English explanation for **{topic_input}**:\n- Key points\n- Important formulas\n- Example questions"
+
+    st.write(explanation)
